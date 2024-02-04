@@ -5,30 +5,27 @@ function setup() {
 function draw() {
   let x = windowWidth/2
   let y = windowHeight/2
-  let radius = 30
+  let radius = 60
   
   beginShape()
-  vertex(x,y-radius)
-  vertex(x-(radius*cos(60)),y+(radius*sin(60)))
-  vertex(x-(radius*cos(60)),y-(radius*sin(60)))
-  vertex(x,y+radius)
-  vertex(x+(radius*cos(60)),y-(radius*sin(60)))
-  vertex(x+(radius*cos(60)),y+(radius*sin(60)))
+  for(let i = 30;i<360;i+=60){
+    vertex(x+(radius*cos(angdeg(i))),y-(radius*sin(angdeg(i)))) 
+    fill("red")
+    circle(x+(radius*cos(angdeg(i))),y+(radius*sin(angdeg(i))), 10)
+    noFill()
+  }
   endShape(CLOSE)
   
   fill("green")
   circle(x,y, 10)
   noFill()
-  
-  fill("red")
-  circle(x,y-radius, 10)
-  noFill()
-  
-  // console.log(3,4,5)
-  
-  circle(x+(radius*cos(60)),y+((radius*sin(60))), 10)
+  circle(x,y,radius*2)
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function angdeg(x){
+  return x * PI /180
 }
