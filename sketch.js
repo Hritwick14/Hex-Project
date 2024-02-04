@@ -12,10 +12,12 @@ function setup() {
 
 function draw() {
   background(255)
+  stroke("black")
   
   if(mouseIsPressed && (mouseX >= x-radius && mouseX <=x+radius) && (mouseY >= y-radius && mouseY <= y+radius)){
     x = mouseX
     y = mouseY  
+    stroke("green")
   }  
   
   beginShape()  
