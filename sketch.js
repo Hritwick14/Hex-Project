@@ -1,18 +1,22 @@
 let t=0
+let x = 0
+let y = 0
+let radius = 60
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  
+  x = windowWidth/2
+  y = windowHeight/2
 }
 
 function draw() {
   background(255)
   
-//   let x = windowWidth/2
-//   let y = windowHeight/2
-  
-  let x = mouseX
-  let y = mouseY
-  let radius = 60
+  if(mouseIsPressed && (mouseX >= x-radius && mouseX <=x+radius) && (mouseY >= y-radius && mouseY <= y+radius)){
+    x = mouseX
+    y = mouseY  
+  }  
   
   beginShape()  
   for(let i = 0,j=30+t;i<6;i++,j+=60){
