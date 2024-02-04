@@ -1,17 +1,24 @@
+let t=0
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  let x = windowWidth/2
-  let y = windowHeight/2
+  background(255)
+  
+//   let x = windowWidth/2
+//   let y = windowHeight/2
+  
+  let x = mouseX
+  let y = mouseY
   let radius = 60
   
-  beginShape()
-  for(let i = 30;i<360;i+=60){
-    vertex(x+(radius*cos(angdeg(i))),y-(radius*sin(angdeg(i)))) 
+  beginShape()  
+  for(let i = 0,j=30+t;i<6;i++,j+=60){
+    vertex(x+(radius*cos(angdeg(j))),y-(radius*sin(angdeg(j)))) 
     fill("red")
-    circle(x+(radius*cos(angdeg(i))),y+(radius*sin(angdeg(i))), 10)
+    circle(x+(radius*cos(angdeg(j))),y-(radius*sin(angdeg(j))), 10)
     noFill()
   }
   endShape(CLOSE)
@@ -20,6 +27,8 @@ function draw() {
   circle(x,y, 10)
   noFill()
   circle(x,y,radius*2)
+  
+  t=t+1%360
 }
 
 function windowResized() {
