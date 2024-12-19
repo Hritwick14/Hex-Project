@@ -1,0 +1,5 @@
+1. there will be at least 10 hex rings
+2. each hex romg will rotate clockwise or counter clockwise
+3. target will be to create groups of 3 colours by swapping and remove them which will cause outer hex cells to collapse inward 
+4. score will the number of moves needed to complete/solve the whole puzzle
+5. animation and design is very very important 
